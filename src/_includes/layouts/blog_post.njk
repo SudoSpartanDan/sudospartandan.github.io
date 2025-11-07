@@ -1,0 +1,20 @@
+---
+layout: base.njk
+---
+<style>
+    main {
+        background-color: var(--color-base-200);
+    }
+</style>
+
+<section class="container bg-base-200 mx-auto px-32">
+    <a href="{{ '/blog/' | url }}" class="btn btn-xs btn-outline my-4"><- Back</a>
+    <h1 class="text-4xl md:text-5xl font-extrabold">{{ title }}</h1>
+    <p class="py-2 text-lg md:text-xl">{{ date | asPostDate }}</p>
+    <div class="divider"></div>
+    <article class="prose py-8">
+        {{ content | safe }}
+    </article>
+    
+</section>
+

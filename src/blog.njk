@@ -1,0 +1,29 @@
+---
+layout: base.njk
+title: Blog
+permalink: /blog/
+---
+<section class="py-16 bg-base-200">
+  <h1 class="text-3xl font-bold mb-8 text-center">Blog</h1>
+
+  
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto px-4 py-16">
+    {%- for post in collections.post -%}
+      <article class="card bg-base-100 shadow hover:shadow-lg transition">
+        <div class="card-body">
+          <h2 class="card-title">
+            <a href="{{ post.url }}" class="hover:text-brand">{{ post.data.title }}</a>
+          </h2>
+          <p class="text-sm opacity-70">{{ post.date | asPostDate }}</p>
+          {% if post.data.excerpt %}
+            <p class="mt-2">{{ post.data.excerpt }}</p>
+          {% endif %}
+          <div class="card-actions justify-end">
+            <a href="{{ post.url }}" class="btn btn-sm btn-primary">Read</a>
+          </div>
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+
+</section>

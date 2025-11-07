@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>{{ title or "Daniel Thompson" }}</title>
+
+
+    <script src="{{ '/js/tailwindcss.js' | url }}"></script>
+    <link rel="stylesheet" href="{{ '/assets/tailwindcss_typo.css' | url }}">
+    <link href="{{ '/assets/daisyui.css' | url }}" rel="stylesheet" type="text/css" />
+    <link href="{{ '/assets/font.css' | url }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/site.css' | url }}">
+  </head> 
+  <body class="min-h-dvh">
+    {% include "partials/header.njk" %}
+    <main>
+      {{ content | safe }}
+    </main>
+    <footer class="py-10 border-t border-slate-200/60 dark:border-slate-800">
+      <div class="mx-auto max-w-6xl px-4 text-sm text-slate-500 flex items-center justify-between">
+        <p>© 2025 Daniel Thompson. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+        </div>
+      </div>
+    </footer>
+  </body>
+  
+</html>

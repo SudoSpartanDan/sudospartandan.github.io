@@ -1,0 +1,26 @@
+{
+  "name": "sudospartandan.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SudoSpartanDan/sudospartandan.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SudoSpartanDan/sudospartandan.github.io/issues"
+  },
+  "homepage": "https://github.com/SudoSpartanDan/sudospartandan.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "luxon": "^3.7.2"
+  }
+}
