@@ -1,4 +1,5 @@
 const { DateTime } = require("luxon");
+const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 module.exports = async function(eleventyConfig) {
   const { HtmlBasePlugin } = await import("@11ty/eleventy");
@@ -12,6 +13,16 @@ module.exports = async function(eleventyConfig) {
 
   eleventyConfig.addFilter("asPostDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toFormat("MMMM dd, yyyy");
+  });
+
+  eleventyConfig.addGlobalData("site", {
+    baseUrl: "https://sudospartandan.github.io"
+  });
+
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: "https://sudospartandan.github.io",
+    },
   });
 
   return {

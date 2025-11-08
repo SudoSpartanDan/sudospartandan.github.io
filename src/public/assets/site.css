@@ -1,7 +1,5 @@
-@plugin "@tailwindcss/typography";
-
 html{
   font-family:Inter,system-ui,sans-serif;
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
-

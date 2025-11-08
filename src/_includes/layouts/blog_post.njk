@@ -18,3 +18,43 @@ layout: base.njk
     
 </section>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{ site.baseUrl }}{{ page.url }}#BlogPosting",
+  "mainEntityOfPage": "{{ site.baseUrl }}{{ page.url }}",
+  "headline": "{{ title }}",
+  "name": "{{ title }}",
+  "description": "{{ excerpt }}"
+  "image": "{{ site.baseUrl }}/assets/avatar.jpg",
+  "datePublished": "{{ date }}",
+  "dateModified": "{{ date }}",
+  "author": {
+    "@type": "Person",
+    "@id": "{{ site.baseUrl }}/#Person",
+    "name": "Daniel Thompson",
+    "url": "{{ site.baseUrl }}/",
+    "image": {
+      "@type": "ImageObject",
+      "@id": "{{ site.url }}/assets/logo.png",
+      "url": "{{ site.url }}/assets/logo.png",
+      "height": "96",
+      "width": "96"
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "@id": "https://dataliberate.com/wp-content/uploads/2019/05/Metadata_Evolution_the_Final_Mile.jpg",
+    "url": "https://dataliberate.com/wp-content/uploads/2019/05/Metadata_Evolution_the_Final_Mile.jpg",
+    "height": "362",
+    "width": "388"
+  },
+  "url": "{{ site.baseUrl }}{{ page.url }}",
+  "isPartOf": {
+    "@type" : "Blog",
+    "@id": "{{ site.baseUrl }}/blog/",
+    "name": "Daniel Thompson Blog"
+  }
+}
+</script>

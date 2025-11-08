@@ -5,4 +5,88 @@ permalink: /projects/
 ---
 <section class="py-16 bg-base-200">
   <h1 class="text-3xl font-bold mb-8 text-center">Projects</h1>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto px-4 py-16">
+
+    <article class="card bg-base-100 shadow hover:shadow-lg transition">
+      <figure class="aspect-video flex items-center justify-center bg-base-300">
+        <img src="{{ '/assets/emoji_bot_example.png' | url }}"
+              alt="Screenshot of AI Plays Jackbox"
+              class="object-contain w-full h-full p-2 transition-transform duration-300 hover:scale-105" />
+      </figure>
+      <div class="card-body">
+        <h3 class="card-title text-lg font-semibold">AI Plays JackBox</h3>
+        <span class="badge badge-success">Creator</span>
+        <p class="text-sm opacity-70">Bringing the dead internet theory to life. Have AI play JackBox with you; no friends required!</p>
+        <div class="flex flex-wrap gap-2 mt-3">
+          <span class="badge badge-outline">Python</span>
+        </div>
+        <div class="card-actions justify-end mt-4">
+          <a href="https://github.com/SudoSpartanDan/ai-plays-jackbox" target="_blank" class="btn btn-sm btn-primary">
+            View
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card bg-base-100 shadow hover:shadow-lg transition">
+      <figure class="aspect-video flex items-center justify-center bg-base-300">
+        <img src="{{ '/assets/tf.png' | url }}"
+              class="object-contain w-full h-full p-2 transition-transform duration-300 hover:scale-105" />
+      </figure>
+      <div class="card-body">
+        <h3 class="card-title text-lg font-semibold">Terraform Provider for dbt Cloud</h3>
+        <span class="badge badge-info">Contributor</span>
+        <p class="text-sm opacity-70">Provide the ability to manage dbt Cloud projects and account settings via Terraform resources.</p>
+        <div class="flex flex-wrap gap-2 mt-3">
+          <span class="badge badge-outline">Go</span>
+        </div>
+        <div class="card-actions justify-end mt-4">
+          <a href="https://github.com/dbt-labs/terraform-provider-dbtcloud" target="_blank" class="btn btn-sm btn-primary">
+            View
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card bg-base-100 shadow hover:shadow-lg transition">
+      <figure class="aspect-video flex items-center justify-center bg-base-300">
+        <img src="{{ '/assets/atlantis.png' | url }}"
+              class="object-contain w-full h-full p-2 transition-transform duration-300 hover:scale-105" />
+      </figure>
+      <div class="card-body">
+        <h3 class="card-title text-lg font-semibold">Atlantis</h3>
+        <span class="badge badge-info">Contributor</span>
+        <p class="text-sm opacity-70">A self-hosted golang application that listens for Terraform pull request events via webhooks.</p>
+        <div class="flex flex-wrap gap-2 mt-3">
+          <span class="badge badge-outline">Go</span>
+        </div>
+        <div class="card-actions justify-end mt-4">
+          <a href="https://github.com/runatlantis/atlantis" target="_blank" class="btn btn-sm btn-primary">
+            View
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card bg-base-100 shadow hover:shadow-lg transition">
+      <figure class="aspect-video flex items-center justify-center bg-base-300">
+        <img src="{{ '/assets/tf.png' | url }}"
+              class="object-contain w-full h-full p-2 transition-transform duration-300 hover:scale-105" />
+      </figure>
+      <div class="card-body">
+        <h3 class="card-title text-lg font-semibold">Terraform Provider for Azure (Resource Manager)</h3>
+        <span class="badge badge-info">Contributor</span>
+        <p class="text-sm opacity-70">The AzureRM Terraform Provider allows managing resources within Azure Resource Manager.</p>
+        <div class="flex flex-wrap gap-2 mt-3">
+          <span class="badge badge-outline">Go</span>
+        </div>
+        <div class="card-actions justify-end mt-4">
+          <a href="https://github.com/dbt-labs/terraform-provider-dbtcloud" target="_blank" class="btn btn-sm btn-primary">
+            View
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
 </section>
