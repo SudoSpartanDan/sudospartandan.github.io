@@ -1,15 +1,17 @@
 const { DateTime } = require("luxon");
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
+const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 
-module.exports = async function(eleventyConfig) {
-  const { HtmlBasePlugin } = await import("@11ty/eleventy");
-  eleventyConfig.addPlugin(HtmlBasePlugin);
-  
-  eleventyConfig.addPassthroughCopy({ "src/public": "/" });
+module.exports = function(eleventyConfig) {
 
-  eleventyConfig.addCollection("posts", (collection) =>
-    collection.getFilteredByTag("post").sort((a, b) => b.date - a.date)
-  );
+  eleventyConfig.setInputDirectory("src");
+  eleventyConfig.setIncludesDirectory("_includes");
+  eleventyConfig.setLayoutsDirectory("_includes/layouts");
+  eleventyConfig.setOutputDirectory("_site");
+  eleventyConfig.addTemplateFormats("njk");
+
+  eleventyConfig.addPassthroughCopy({ "src/public": "/" })
+
 
   eleventyConfig.addFilter("asPostDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toFormat("MMMM dd, yyyy");
@@ -25,14 +27,22 @@ module.exports = async function(eleventyConfig) {
     },
   });
 
-  return {
-    dir: {
-      input: "src",
-      includes: "_includes",
-      layouts: "_includes/layouts",
-      output: "_site"
-    },
-    markdownTemplateEngine: "njk",
-    htmlTemplateEngine: "njk"
-  };
+  eleventyConfig.addPlugin(feedPlugin, {
+    type: "atom",
+    outputPath: "feed.xml",
+    collection: {
+			name: "post",
+			limit: 10,
+		},
+    metadata: {
+			language: "en",
+			title: "Daniel Thompson - Blog",
+			subtitle: "A blog of various topics related to leadership and IT.",
+			base: "https://sudospartandan.github.io/",
+			author: {
+				name: "Daniel Thompson",
+        email: ""
+			}
+		}
+  });
 }

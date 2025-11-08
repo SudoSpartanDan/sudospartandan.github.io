@@ -233,7 +233,7 @@ function renderExperience(exp, idx, total) {
       >`
     : "";
   const deployment = exp.deployment
-    ? `<span class="badge badge-accent ms-2">${exp.deployment}</span>`
+    ? `<span class="badge badge-info ms-2">${exp.deployment}</span>`
     : "";
   return `
     <li>

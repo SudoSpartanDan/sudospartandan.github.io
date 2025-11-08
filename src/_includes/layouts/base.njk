@@ -1,9 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="winter">
   <head>
     <meta charset="utf-8">
     <meta name="color-scheme" content="light dark">
     <title>{{ title or "Daniel Thompson" }}</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16x16.png' | url }}">
+    <link rel="manifest" href="{{ '/assets/favicon/site.webmanifest' | url }}">
+
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml">
 
     <meta name="description" content="Daniel Thompson" />
     <meta name="keywords" content="" />
@@ -11,8 +18,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <meta property="og:title" content="{{ title or 'Daniel Thompson' }}" />
-    <meta property="og:description" content="{{ '/assets/avatar.jpg' | url }}" />
-    <meta property="og:image" content="/assets/og-image.png" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="{{ '/assets/avatar.jpg' | url }}" />
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta name="twitter:card" content="summary_large_image" />
 
@@ -20,6 +27,7 @@
     <script src="{{ '/js/tailwindcss.js' | url }}"></script>
     <link rel="stylesheet" href="{{ '/assets/tailwindcss_typo.css' | url }}">
     <link href="{{ '/assets/daisyui.css' | url }}" rel="stylesheet" type="text/css" />
+    <link href="{{ '/assets/daisyui_theme.css' | url }}" rel="stylesheet" type="text/css" />
     <link href="{{ '/assets/font.css' | url }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/site.css' | url }}">
   </head> 
@@ -32,7 +40,13 @@
       <div class="mx-auto max-w-6xl px-4 text-sm text-slate-500 flex items-center justify-between">
         <p>© 2025 Daniel Thompson. All rights reserved.</p>
         <div class="flex items-center gap-4">
-          <a href="/sitemap.xml" class="link link-hover">Sitemap</a>
+          <a href="{{ '/sitemap.xml' | url }}" class="link link-hover">Sitemap</a>
+          <a href="{{ '/feed.xml' | url }}" class="link link-hover flex items-center gap-2" title="Subscribe via RSS">
+            RSS Feed
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 fill-current">
+              <path d="M4 11a9 9 0 0 1 9 9h-2a7 7 0 0 0-7-7v-2zm0-4a13 13 0 0 1 13 13h-2A11 11 0 0 0 4 9V7zm0 10a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/>
+            </svg>
+          </a>
         </div>
       </div>
     </footer>

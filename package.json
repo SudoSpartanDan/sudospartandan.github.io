@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx @11ty/eleventy --serve",
+    "serve": "npx @11ty/eleventy --serve",
+    "debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
     "build": "npx @11ty/eleventy"
   },
   "repository": {
@@ -21,7 +22,9 @@
   "homepage": "https://github.com/SudoSpartanDan/sudospartandan.github.io#readme",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
+    "cross-env": "^10.1.0",
     "luxon": "^3.7.2"
   }
 }
