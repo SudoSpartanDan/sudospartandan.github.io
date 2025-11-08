@@ -1,3 +1,3 @@
 ```shell
-npx @11ty/eleventy --serve
+npm run dev
 ```
