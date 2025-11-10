@@ -10,7 +10,7 @@ permalink: /blog/
       Subscribe via RSS
     </a>
   </p>
-  <div class="space-y-8 container mx-auto px-64 py-16">
+  <div class="space-y-8 container mx-auto px-4 lg:px-32 py-16">
     {%- for post in collections.post | reverse -%}
       <article class="bg-base-100 rounded-lg shadow hover:shadow-md transition border border-base-300">
         <a href="{{ post.url | url }}" class="block p-6">

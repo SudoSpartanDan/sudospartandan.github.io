@@ -229,11 +229,11 @@ function renderExperience(exp, idx, total) {
   const sideClass = idx % 2 === 0 ? "timeline-start md:text-end" : "timeline-end";
   const logo = exp.logo
     ? `<img src="${exp.logo}" alt="${exp.employer} logo"
-        class="w-12 h-12 object-contain rounded bg-base-200 p-1 border border-base-300 mb-2 inline-block align-middle"
+        class="w-12 h-12 object-contain rounded bg-base-200 p-1 m-1 border border-base-300 inline-block align-middle"
       >`
     : "";
   const deployment = exp.deployment
-    ? `<span class="badge badge-info ms-2">${exp.deployment}</span>`
+    ? `<span class="text-xs md:text-md badge badge-info ms-2">${exp.deployment}</span>`
     : "";
   return `
     <li>
@@ -252,13 +252,19 @@ function renderExperience(exp, idx, total) {
         </svg>
       </div>
       <div class="${sideClass} mb-10">
-        <time class="font-mono italic">${formatDateRange(exp.startDate, exp.endDate)}</time>
-        <div class="text-lg font-semibold">
+        <time class="font-mono text-sm md:text-md italic">${formatDateRange(exp.startDate, exp.endDate)}</time>
+        <div class="text-sm md:text-lg font-semibold">
           ${exp.title}
         </div>
-        <div class="text-base-content/70">
-          ${logo}
-          ${exp.employer}${exp.location ? " • " + exp.location : ""}
+        <div class="text-xs md:text-md text-base-content/70">
+          <div class="inline-flex items-center">
+            ${idx % 2 !== 0 ? logo : ""}
+            <div>
+              <p>${exp.employer}</p>
+              ${exp.location ? "<p class=\"italic text-base-content/70\">" + exp.location + "</p>" : ""}
+            </div>
+            ${idx % 2 === 0 ? logo : ""}
+          </div>
         </div>
         ${deployment}
       </div>
